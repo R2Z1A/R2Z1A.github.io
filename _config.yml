@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 'igiveup'
+title: 'problemisdabao'
 subtitle: ''
 description: ''
 keywords:
-author: 10jqka
-language: zh-CN
+author: '10jqka'
+language: 'zh-CN'
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -96,7 +96,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: redefine
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -104,4 +104,5 @@ deploy:
   type: git
   repo: https://github.com/10-jqka/10-jqka.github.io.git
   branch: 'main'
+  message: {{ now('YYYY-MM-DD HH:mm:ss') }}
   token:

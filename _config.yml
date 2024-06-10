@@ -102,7 +102,7 @@ theme: redefine
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/10-jqka/10-jqka.github.io.git
-  branch: 'main'
-  message: {{ now('YYYY-MM-DD HH:mm:ss') }}
+  repo: https://github.com/10-jqka/10-jqka.github.io
+  branch: gh-pages
+  message: 'update'
   token:

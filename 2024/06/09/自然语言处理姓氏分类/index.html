@@ -18,15 +18,15 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="概要 实验内容 多层感知机    概要实验内容多层感知机">
+        <meta name="description" content="基于pytorch搭建模型，根据姓氏进行国籍分类。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自然语言处理姓氏分类">
 <meta property="og:url" content="https://10-jqka.github.io/2024/06/09/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%A7%93%E6%B0%8F%E5%88%86%E7%B1%BB/index.html">
 <meta property="og:site_name" content="problemisdabao">
-<meta property="og:description" content="概要 实验内容 多层感知机    概要实验内容多层感知机">
+<meta property="og:description" content="基于pytorch搭建模型，根据姓氏进行国籍分类。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-06-09T14:17:51.000Z">
-<meta property="article:modified_time" content="2024-06-10T13:27:40.950Z">
+<meta property="article:modified_time" content="2024-06-10T15:11:57.281Z">
 <meta property="article:author" content="10jqka">
 <meta property="article:tag" content="人工智能">
 <meta property="article:tag" content="自然语言处理">
@@ -230,7 +230,7 @@
 
     <script id="hexo-configurations">
     window.config = {"hostname":"10-jqka.github.io","root":"/","language":"zh-CN"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"5rem","h2":"4rem","h3":"2.8rem","h4":"2.5rem","h5":"2.2rem","h6":"2rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":false,"scale":true},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/cogecha/74851178_p0_small.png","dark":"/images/cogecha/74851178_p0_small.png"},"title":"部落格施工中...","subtitle":{"text":["每天开心一点点就很进步了.","less may be more, slow may be fast.","网络隔一面,日后好相见"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#FFFFFF","dark":"#FFFFFF"},"text_style":{"title_size":"3.4rem","subtitle_size":"1.6rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.2","navbar":{"auto_hide":false,"color":{"left":"#367df7","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"不要投资,不然会变得不幸","show_on_mobile":true,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2024/6/9 22:15:00"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"5rem","h2":"4rem","h3":"2.8rem","h4":"2.5rem","h5":"2.2rem","h6":"2rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":false,"scale":true},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/cogecha/74851178_p0_small.png","dark":"/images/cogecha/74851178_p0_small.png"},"title":"部落格施工中...","subtitle":{"text":["每天开心一点点就很进步了.","less may be more, slow may be fast.","网络隔一面,日后好相见"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#FFFFFF","dark":"#FFFFFF"},"text_style":{"title_size":"3.4rem","subtitle_size":"1.6rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.2","navbar":{"auto_hide":false,"color":{"left":"#367df7","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"不要开户,不然会变得不幸","show_on_mobile":true,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2024/6/9 22:15:00"};
     window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
     window.data = {"masonry":false};
   </script>
@@ -358,7 +358,7 @@
         <div class="label text-third-text-color text-sm">标签</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">1</div>
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
@@ -387,8 +387,12 @@
 
         <div class="article-title relative w-full">
             
-                <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">自然语言处理姓氏分类</h1>
+                
+                
+                <img src="/images%5Cblog%5C%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%A7%93%E6%B0%8F%E5%88%86%E7%B1%BB.jpg" alt="自然语言处理姓氏分类" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                
+                <div class="w-full flex items-center absolute bottom-0 justify-start">
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-bold backdrop-blur-lg rounded-xl border border-border-color ">自然语言处理姓氏分类</h1>
                 </div>
             
             </div>
@@ -396,7 +400,7 @@
         
             <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
                 <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
-                    <img src="/images/others/avatar.jpg">
+                    <img src="/images/avatar/avatar.jpg">
                 </div>
                 <div class="info flex flex-col justify-between">
                     <div class="author flex items-center">
@@ -416,8 +420,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-06-10 21:27:40</span>
-            <span class="mobile">2024-06-10 21:27:40</span>
+            <span class="desktop">2024-06-10 23:11:57</span>
+            <span class="mobile">2024-06-10 23:11:57</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -432,16 +436,6 @@
                         
                         <li>
                             <a href="/categories/2024%E5%A4%8F/">2024夏</a>&nbsp;
-                        </li>
-                    
-                    
-                
-                    
-                        
-                            <li>></li>
-                        
-                        <li>
-                            <a href="/categories/2024%E5%A4%8F/%E6%8A%80%E6%9C%AF%E7%B1%BB%E6%96%87%E7%AB%A0/">技术类文章</a>&nbsp;
                         </li>
                     
                     
@@ -485,14 +479,106 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <ul>
+            
+  <div class="note-large blue">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <i class="notel-icon fa-solid fa-solid fa-book"></i><p>前言</p>
+
+    </div>
+    <div class="notel-content">
+      <p>个人觉得这东西挺绕人的…对新手（比如我这种）还是太难理解了…<strong>实验任务</strong>内容在文末<strong>扩展</strong>处。</p>
+
+    </div>
+  </div>
+
+<ul>
 <li><a href="#%E6%A6%82%E8%A6%81">概要</a></li>
-<li><a href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">实验内容</a><ul>
+<li><a href="#%E5%86%85%E5%AE%B9">内容</a><ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E9%9B%86">数据集</a><ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E9%A2%84%E5%A4%84%E7%90%86">预处理</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA%E5%A7%93%E6%B0%8F%E5%88%86%E7%B1%BB">多层感知机姓氏分类</a><ul>
 <li><a href="#%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA">多层感知机</a></li>
+<li><a href="#%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA%E6%A8%A1%E5%9E%8B%E5%AE%9A%E4%B9%89">多层感知机模型定义</a></li>
+<li><a href="#%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83">多层感知机模型训练</a></li>
+<li><a href="#%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%95">多层感知机模型测试</a></li>
+</ul>
+</li>
+<li><a href="#cnn%E5%A7%93%E6%B0%8F%E5%88%86%E7%B1%BB">CNN姓氏分类</a><ul>
+<li><a href="#cnn%E5%8D%B7%E7%A7%AF%E7%BD%91%E7%BB%9C">CNN卷积网络</a></li>
+<li><a href="#cnn%E6%A8%A1%E5%9E%8B%E5%AE%9A%E4%B9%89">CNN模型定义</a></li>
+<li><a href="#cnn%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83">CNN模型训练</a></li>
+<li><a href="#cnn%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%95">CNN模型测试</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><h3 id="多层感知机"><a href="#多层感知机" class="headerlink" title="多层感知机"></a>多层感知机</h3>
+</li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+<li><a href="#%E6%89%A9%E5%B1%95">扩展</a><ul>
+<li><a href="#%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA%E5%9C%A8%E5%A4%9A%E5%B1%82%E5%88%86%E7%B1%BB%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8">多层感知机在多层分类中的应用</a></li>
+<li><a href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B1%82%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%BC%A0%E9%87%8F%E5%A4%A7%E5%B0%8F%E5%BD%A2%E7%8A%B6%E7%9A%84%E5%BD%B1%E5%93%8D">神经网络层对数据张量大小形状的影响</a></li>
+<li><a href="#%E5%B8%A6dropout%E7%9A%84%E6%A8%A1%E5%9E%8B">带dropout的模型</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>本文主要有：</p>
+<ol>
+<li>介绍使用的数据集，进行预处理。</li>
+<li>结合自然语言处理，简要学习pytorch里的多层感知机和cnn。</li>
+<li>构建多层感知机模型和cnn模型，应用于数据集的分类任务。</li>
+</ol>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>本文使用的数据集为The Surname Dataset姓氏数据集，收集了来自18个不同国家的10,000个姓氏，这些姓氏是作者从互联网上不同的姓名来源收集的。</p>
+<p>通过代码快速预览数据集：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> argparse <span class="keyword">import</span> Namespace</span><br><span class="line"></span><br><span class="line">args = Namespace(</span><br><span class="line">    raw_dataset_csv=<span class="string">&quot;data/surnames/surnames.csv&quot;</span>,</span><br><span class="line">    train_proportion=<span class="number">0.7</span>,</span><br><span class="line">    val_proportion=<span class="number">0.15</span>,</span><br><span class="line">    test_proportion=<span class="number">0.15</span>,</span><br><span class="line">    output_munged_csv=<span class="string">&quot;data/surnames/surnames_with_splits.csv&quot;</span>,</span><br><span class="line">    seed=<span class="number">1337</span></span><br><span class="line">)</span><br><span class="line"><span class="comment"># Read raw data</span></span><br><span class="line">surnames = pd.read_csv(args.raw_dataset_csv, header=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">surnames.head()</span><br></pre></td></tr></table></figure></div>
+
+<p>打印输出为：</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="right">surname</th>
+<th align="right">nationality</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="right">Woodford</td>
+<td align="right">English</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="right">Coté</td>
+<td align="right">French</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="right">Kore</td>
+<td align="right">English</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="right">Koury</td>
+<td align="right">Arabic</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="right">Lebzak</td>
+<td align="right">Russian</td>
+</tr>
+</tbody></table>
+<p>可以看到数据集组成比较简单，其中surname为features，nationality为labels。为多分类问题任务。</p>
+<h4 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h4><p>接下来，我们划分数据集为训练集、验证集、测试集三部分。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Splitting train by nationality</span></span><br><span class="line"><span class="comment"># Create dict</span></span><br><span class="line">by_nationality = collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line"><span class="keyword">for</span> _, row <span class="keyword">in</span> surnames.iterrows():</span><br><span class="line">    by_nationality[row.nationality].append(row.to_dict())</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create split data</span></span><br><span class="line">final_list = []</span><br><span class="line">np.random.seed(args.seed)</span><br><span class="line"><span class="keyword">for</span> _, item_list <span class="keyword">in</span> <span class="built_in">sorted</span>(by_nationality.items()):</span><br><span class="line">    np.random.shuffle(item_list)</span><br><span class="line">    n = <span class="built_in">len</span>(item_list)</span><br><span class="line">    n_train = <span class="built_in">int</span>(args.train_proportion*n)</span><br><span class="line">    n_val = <span class="built_in">int</span>(args.val_proportion*n)</span><br><span class="line">    n_test = <span class="built_in">int</span>(args.test_proportion*n)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Give data point a split attribute</span></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> item_list[:n_train]:</span><br><span class="line">        item[<span class="string">&#x27;split&#x27;</span>] = <span class="string">&#x27;train&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> item_list[n_train:n_train+n_val]:</span><br><span class="line">        item[<span class="string">&#x27;split&#x27;</span>] = <span class="string">&#x27;val&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> item_list[n_train+n_val:]:</span><br><span class="line">        item[<span class="string">&#x27;split&#x27;</span>] = <span class="string">&#x27;test&#x27;</span>  </span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Add to final list</span></span><br><span class="line">    final_list.extend(item_list)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Write split data to file</span></span><br><span class="line">final_surnames = pd.DataFrame(final_list)</span><br><span class="line"></span><br><span class="line">final_surnames.split.value_counts()</span><br></pre></td></tr></table></figure></div>
+
+<p>打印输出为：</p>
+<div class="highlight-container" data-rel="Txt"><figure class="iseeu highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">train    7680</span><br><span class="line"></span><br><span class="line">test     1660</span><br><span class="line"></span><br><span class="line">val      1640</span><br><span class="line"></span><br><span class="line">Name: split, dtype: int64</span><br></pre></td></tr></table></figure></div>
+
+<p>这里，我们将split作为标签插入数据集中进行分类。最后，保存分割后的数据集：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Write munged data to CSV</span></span><br><span class="line">final_surnames.to_csv(args.output_munged_csv, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="多层感知机姓氏分类"><a href="#多层感知机姓氏分类" class="headerlink" title="多层感知机姓氏分类"></a>多层感知机姓氏分类</h3><h4 id="多层感知机"><a href="#多层感知机" class="headerlink" title="多层感知机"></a>多层感知机</h4><h4 id="多层感知机模型定义"><a href="#多层感知机模型定义" class="headerlink" title="多层感知机模型定义"></a>多层感知机模型定义</h4><h4 id="多层感知机模型训练"><a href="#多层感知机模型训练" class="headerlink" title="多层感知机模型训练"></a>多层感知机模型训练</h4><h4 id="多层感知机模型测试"><a href="#多层感知机模型测试" class="headerlink" title="多层感知机模型测试"></a>多层感知机模型测试</h4><h3 id="CNN姓氏分类"><a href="#CNN姓氏分类" class="headerlink" title="CNN姓氏分类"></a>CNN姓氏分类</h3><h4 id="CNN卷积网络"><a href="#CNN卷积网络" class="headerlink" title="CNN卷积网络"></a>CNN卷积网络</h4><h4 id="CNN模型定义"><a href="#CNN模型定义" class="headerlink" title="CNN模型定义"></a>CNN模型定义</h4><h4 id="CNN模型训练"><a href="#CNN模型训练" class="headerlink" title="CNN模型训练"></a>CNN模型训练</h4><h4 id="CNN模型测试"><a href="#CNN模型测试" class="headerlink" title="CNN模型测试"></a>CNN模型测试</h4><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h3 id="多层感知机在多层分类中的应用"><a href="#多层感知机在多层分类中的应用" class="headerlink" title="多层感知机在多层分类中的应用"></a>多层感知机在多层分类中的应用</h3><h3 id="神经网络层对数据张量大小形状的影响"><a href="#神经网络层对数据张量大小形状的影响" class="headerlink" title="神经网络层对数据张量大小形状的影响"></a>神经网络层对数据张量大小形状的影响</h3><h3 id="带dropout的模型"><a href="#带dropout的模型" class="headerlink" title="带dropout的模型"></a>带dropout的模型</h3>
         </div>
 
         
@@ -506,7 +592,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-06-10 21:27:40
+                    :</strong> 2024-06-10 23:11:57
             </li>
         
         <li>
@@ -598,7 +684,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">自然语言处理姓氏分类</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%A6%81"><span class="nav-text">概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="nav-text">实验内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA"><span class="nav-text">多层感知机</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%A6%81"><span class="nav-text">概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-text">内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA%E5%A7%93%E6%B0%8F%E5%88%86%E7%B1%BB"><span class="nav-text">多层感知机姓氏分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN%E5%A7%93%E6%B0%8F%E5%88%86%E7%B1%BB"><span class="nav-text">CNN姓氏分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%B1%95"><span class="nav-text">扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA%E5%9C%A8%E5%A4%9A%E5%B1%82%E5%88%86%E7%B1%BB%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">多层感知机在多层分类中的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B1%82%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%BC%A0%E9%87%8F%E5%A4%A7%E5%B0%8F%E5%BD%A2%E7%8A%B6%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="nav-text">神经网络层对数据张量大小形状的影响</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%A6dropout%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="nav-text">带dropout的模型</span></a></li></ol></li></ol>
 
     </div>
 </div>

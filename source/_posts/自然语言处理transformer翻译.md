@@ -8,7 +8,7 @@ thumbnail: /images/blog/nlp_transformer/劝赌.JPG
 ---
 
 {% notel blue 'fa-solid fa-book' '前言' %}
-好困。
+好困。好饿。
 {% endnotel %}
 
 - [概要](#概要)

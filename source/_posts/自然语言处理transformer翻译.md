@@ -8,7 +8,7 @@ thumbnail: /images/blog/nlp_transformer/劝赌.JPG
 ---
 
 {% notel blue 'fa-solid fa-book' '前言' %}
-好困。好饿。
+kaggle项目地址： <https://www.kaggle.com/ayinpasternak/nlp-cj>，如果访问不了可能删了跑路了。
 {% endnotel %}
 
 - [概要](#概要)

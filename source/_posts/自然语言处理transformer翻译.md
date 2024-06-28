@@ -5,6 +5,7 @@ categories: [作业]
 tags: [人工智能, 自然语言处理]
 excerpt: 基于pytorch，实现transformer，线上训练。
 thumbnail: /images/blog/nlp_transformer/劝赌.JPG
+mathjax: true
 ---
 
 {% notel blue 'fa-solid fa-book' '前言' %}

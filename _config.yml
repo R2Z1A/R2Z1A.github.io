@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 'problemisdabao'
+title: '10jqka'
 subtitle: ''
 description: ''
 keywords:
@@ -106,3 +106,11 @@ deploy:
   branch: gh-pages
   message: 'update'
   token:
+
+mathjax:
+  tags: none               # or 'ams' or 'all'
+  single_dollars: true     # enable single dollar signs as in-line math delimiters
+  cjk_width: 0.9           # relative CJK char width
+  normal_width: 0.6        # relative normal (monospace) width
+  append_css: true         # add CSS to every page
+  every_page: true        # if true, every page will be rendered by mathjax regardless the `mathjax` setting in Front-matter of each article

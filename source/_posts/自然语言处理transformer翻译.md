@@ -1,7 +1,7 @@
 ---
 title: 自然语言处理transformer翻译
 date: 2024-06-26 07:52:41
-categories: [作业, 其它垃圾]
+categories: [其他垃圾, 作业]
 tags: [人工智能, 自然语言处理]
 excerpt: 基于pytorch，实现transformer，线上训练。
 thumbnail: /images/blog/nlp_transformer/劝赌.JPG

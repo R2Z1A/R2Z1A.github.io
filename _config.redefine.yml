@@ -11,11 +11,11 @@
 # Docs: https://redefine-docs.ohevan.com/basic/info
 info:
   # Site title
-  title: 十钩圈凯尖
+  title: 遷移一区画
   # Author name
-  author: 10-jqka
+  author: R2Z1A
   # Site URL
-  url: https://10-jqka.github.io
+  url: https://R2Z1A.github.io
 # BASIC INFORMATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -27,7 +27,7 @@ defaults:
   # Site logo
   logo: 
   # Site avatar
-  avatar: /images/avatar/avatar.jpg
+  avatar: /images/avatar/avatar3.jpg
 # IMAGE CONFIGURATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -119,9 +119,8 @@ home_banner:
   title: 部落格施工中...
   # Home banner subtitle
   subtitle:
-    text: ['每天开心一点点就很进步了.',
-           'less may be more, slow may be fast.',
-           '网络隔一面,日后好相见'] # subtitle text, array
+    text: ['完成重过于完美.',
+           '学会放手同样重要.'] # subtitle text, array
     hitokoto:  # 一言配置
       enable: false # Whether to enable hitokoto
       api: https://v1.hitokoto.cn # API URL, can add types, see https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
@@ -234,7 +233,7 @@ home:
     enable: true # Whether to enable sidebar
     position: left # Sidebar position. left, right
     first_item: menu # First item in sidebar. menu, info
-    announcement: '不要开户,不然会变得不幸' # Announcement text
+    announcement: '我学我学我学' # Announcement text
     show_on_mobile: true # Whether to show sidebar navigation on mobile sheet menu
     links:
       Archives: 

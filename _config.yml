@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: '10jqka'
+title: 'R2Z1A'
 subtitle: ''
 description: ''
 keywords:
-author: '10jqka'
+author: 'R2Z1A'
 language: 'zh-CN'
 timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://10-jqka.github.io
+url: https://R2Z1A.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -31,8 +31,8 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :title.md # File name of new posts
-default_layout: post
+new_post_name: :year-:month-:day-:title.md # File name of new posts
+default_layout: mystartupopstrialbyfire247oncallzerodocs
 titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab

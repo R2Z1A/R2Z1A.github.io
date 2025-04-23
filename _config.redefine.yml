@@ -117,7 +117,7 @@ home_banner:
     light: /images/cogecha/74851178_p0_small.png # light mode
     dark: /images/cogecha/74851178_p0_small.png # dark mode
   # Home banner title
-  title: 部落格施工中...
+  title: 遷移一区画
   # Home banner subtitle
   subtitle:
     text: ['先完成、再完美.不怕不完美、就怕不开始！',

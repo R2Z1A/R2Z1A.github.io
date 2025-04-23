@@ -82,7 +82,8 @@ global:
   # Whether to enable Preloader.
   preloader: true
   # Whether to enable open graph
-  open_graph: true
+  open_graph: 
+    enable: false
   # Google Analytics
   google_analytics:
     enable: false # Whether to enable Google Analytics

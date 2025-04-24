@@ -1,9 +1,9 @@
 ---
 title: {{ title }}
-start_date: 2025-04-19
+start_date: 2025-04-19 20:24:04
 date: {{ date }}
-categories: [厕所, 模板]
-tags: [模板]
+categories: [厕所, 赤石驻场]
+tags: [赤石驻场, 赤石日记]
 excerpt: 我是赤石大王，超爱赤石。
 ---
 

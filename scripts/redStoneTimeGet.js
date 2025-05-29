@@ -18,7 +18,7 @@ hexo.extend.filter.register("before_post_render", function (post) {
         const moment = require('moment');
 
         const startDate = moment(post.start_date);
-        const endDate = moment(post.date);
+        const endDate = moment(post.date).add(8, 'hours');
 
         const timeDifference = moment.duration(endDate.diff(startDate));
         

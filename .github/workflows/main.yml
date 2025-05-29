@@ -17,3 +17,6 @@ jobs:
   recall_pageBuild:
     needs: decodermd
     uses: ./.github/workflows/pagesBuild.yml
+    permissions:
+      pages: write
+      id-token: write

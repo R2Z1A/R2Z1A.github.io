@@ -21,7 +21,7 @@ jobs:
       - name: Checkout private actions
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_MACHINE_TOKEN }}
-          repositories: my-org/example-action my-org/another-action@v3.1.0 my-org/third-action
+          token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: recursive
       - name: Trigger pages build
         uses: ./.github/workflows/pagesBuild.yml  # 引用工作流

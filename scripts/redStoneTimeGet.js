@@ -13,12 +13,12 @@
 // //     }
 // // });
 
-hexo.extend.filter.register("before_post_render", function (post) {    
+hexo.extend.filter.register("before_post_render", function (post) { 
     if (post.start_date) {
         const moment = require('moment');
 
-        const startDate = moment(post.start_date);
-        const endDate = post.date;
+        const startDate = moment.tz(post.start_date, 'YYYY-MM-DD HH:mm:ss', 'UTC');
+        const endDate = moment.tz(post.date, 'UTC');
 
         const timeDifference = moment.duration(endDate.diff(startDate));
 
@@ -35,4 +35,5 @@ hexo.extend.filter.register("before_post_render", function (post) {
         );
         return post
     }
+    return post
 });

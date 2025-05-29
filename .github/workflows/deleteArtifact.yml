@@ -4,10 +4,19 @@ on:
   workflow_call:
 
 jobs:
-  delete_artifact:
-    if: always()
-    uses: geekyeggo/delete-artifact@v1
-    with:
-      names: | 
-        decrypted-files
-        github-pages
+  pushZero:
+    steps:
+    - name: github-pages
+      use: actions/upload-artifact@v4
+      with:
+        name: github-pages
+        path: README.md
+        compression-level: true
+
+    - name: decrypted-files
+      use: actions/upload-artifact@v4
+      with:
+        name: ecrypted-files
+        path: README.md
+        compression-level: true
+

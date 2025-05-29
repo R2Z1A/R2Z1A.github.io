@@ -1,10 +1,10 @@
 ---
 title: {{ title }}
-start_date: 2025-04-19 20:24:04
-date: {{ date }}
 categories: [厕所, 赤石驻场]
 tags: [赤石驻场, 赤石日记]
 excerpt: 我是赤石大王，超爱赤石。
+start_date: 2025-04-19T20:24:04+08:00
+date: {{ date }}
 ---
 
 - 赤石时间统计：</@red_stone_time>

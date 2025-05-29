@@ -23,5 +23,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: recursive
-      - name: Trigger pages build
-        uses: ./.github/workflows/pagesBuild.yml  # 引用工作流
+      - name: pagesBuild
+        uses: ./.github/workflows  # 引用工作流

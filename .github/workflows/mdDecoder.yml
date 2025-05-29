@@ -6,17 +6,17 @@ on:
       input_path:
         description: '输入文件或目录路径'
         required: true
-        type: str
+        type: string
       ext:
         description: '加密文件扩展名'
         required: false
         default: '.encrypted'
-        type: str
+        type: string
       d:
         description: '是否处理整个目录'
         required: false
         default: false
-        type: bool
+        type: boolean
     secrets:
       KEY:
         required: true

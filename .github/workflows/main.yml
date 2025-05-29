@@ -16,7 +16,6 @@ jobs:
           submodules: recursive
   trigger-pages-build:
     needs: decodermd
-    runs-on: ubuntu-latest
     steps:
       - name: Trigger pages build
-        uses: ./.github/workflows/pagesBuild.yml@main  # 引用工作流
+        uses: ./.github/workflows/pagesBuild.yml  # 引用工作流

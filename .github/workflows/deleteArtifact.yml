@@ -11,13 +11,13 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: github-pages
-        path: README.md
+        path: ./README.md
         compression-level: true
 
     - name: decrypted-files
       uses: actions/upload-artifact@v4
       with:
-        name: ecrypted-files
-        path: README.md
+        name: decrypted-files
+        path: ./README.md
         compression-level: true
 

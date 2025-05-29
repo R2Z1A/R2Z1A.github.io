@@ -37,10 +37,7 @@ jobs:
       run: pip install cryptography
     - name: Run decryption script
       run: |
-        if [ "${{ inputs.d }}" = "true" ]; then
-          python dec.py -i "${{ inputs.input_path }}" -key "${{ secrets.KEY }}" --ext "${{ inputs.ext }}" -d
-        else
-          python dec.py -i "${{ inputs.input_path }}" -key "${{ secrets.KEY }}" --ext "${{ inputs.ext }}"
+        python dec.py -i "${{ inputs.input_path }}" -key "${{ secrets.KEY }}" --ext "${{ inputs.ext }}" -d
     - name: Delete encrypted files
       run: |
         find "${{ inputs.input_path }}" -type f -name "*${{ inputs.ext }}" -exec rm -f {} \;

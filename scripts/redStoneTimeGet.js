@@ -22,9 +22,9 @@ hexo.extend.filter.register("before_post_render", function (post) {
 
         const timeDifference = moment.duration(endDate.diff(startDate));
         
-        // console.log(post.title)
-        // console.log(startDate)
-        // console.log(endDate)
+        console.log(post.title)
+        console.log(startDate)
+        console.log(endDate)
         // console.log(timeDifference)
 
         // 将时间差转换为秒、分钟、小时、天

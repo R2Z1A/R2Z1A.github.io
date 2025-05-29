@@ -6,16 +6,16 @@ on:
       - main  # default branch
 
 jobs:
-  decodermd:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # If your repository depends on submodule, please see: https://github.com/actions/checkout
-          submodules: recursive
+  decodemd:
+    uses: ./.github/workflows/mdDecoder.yml
+    with:
+      input_path: './source/_posts'
+      ext: '.encrypted'
+      d: true
+    secrets:
+      KEY: ${{ secrets.KEY }}
   recall_pageBuild:
-    needs: decodermd
+    needs: decodemd
     uses: ./.github/workflows/pagesBuild.yml
     permissions:
       pages: write

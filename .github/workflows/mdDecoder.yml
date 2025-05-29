@@ -1,0 +1,53 @@
+name: mdDecoder
+
+on:
+  workflow_call:
+    inputs:
+      input_path:
+        description: '输入文件或目录路径'
+        required: true
+      ext:
+        description: '加密文件扩展名'
+        required: false
+        default: '.encrypted'
+      d:
+        description: '是否处理整个目录'
+        required: false
+        default: false
+    secrets:
+      KEY:
+        required: true
+
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        submodules: recursive
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: pip install cryptography
+
+    - name: Run decryption script
+      run: |
+        if [ "${{ inputs.d }}" = "true" ]; then
+          python dec.py -i "${{ inputs.input_path }}" -key "${{ secrets.KEY }}" --ext "${{ inputs.ext }}" -d
+        else
+          python dec.py -i "${{ inputs.input_path }}" -key "${{ secrets.KEY }}" --ext "${{ inputs.ext }}"
+
+    - name: Delete encrypted files
+      run: |
+        find "${{ inputs.input_path }}" -type f -name "*${{ inputs.ext }}" -exec rm -f {} \;
+
+    - name: Save decrypted files as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: decrypted-files
+        path: ${{ inputs.input_path }}

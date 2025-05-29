@@ -1,3 +1,3 @@
-# 10-jqka.github.io
+# thats all
 
 一个部落格for myself

@@ -1,0 +1,13 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main  # default branch
+
+jobs:
+  trigger-pages-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger pages build
+        uses: ./.github/workflows/pagesBuild.yml  # 引用工作流

@@ -1,0 +1,13 @@
+name: deleteArtifact
+
+on:
+  workflow_call:
+
+jobs:
+  delete_artifact:
+    if: always()
+    uses: geekyeggo/delete-artifact@v1
+    with:
+      names: | 
+        decrypted-files
+        github-pages

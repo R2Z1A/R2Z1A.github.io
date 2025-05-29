@@ -20,10 +20,6 @@ jobs:
     permissions:
       pages: write
       id-token: write
-  delete_artifact:
-    if: always()
-    uses: geekyeggo/delete-artifact@v1
-    with:
-      names: | 
-        decrypted-files
-        github-pages
+  deleteArti:
+    needs: recall_pageBuild
+    uses: ./.github/workflows/deleteArtifact.yml

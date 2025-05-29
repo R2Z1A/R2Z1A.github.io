@@ -21,6 +21,10 @@ hexo.extend.filter.register("before_post_render", function (post) {
         const endDate = moment.tz(post.date, 'UTC+8');
 
         const timeDifference = moment.duration(endDate.diff(startDate));
+        
+        console.log(startDate)
+        console.log(endDate)
+        console.log(timeDifference)
 
         // 将时间差转换为秒、分钟、小时、天
         const months = timeDifference.months();

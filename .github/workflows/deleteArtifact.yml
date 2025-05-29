@@ -7,6 +7,10 @@ jobs:
   pushZero:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        submodules: recursive
     - name: github-pages
       uses: actions/upload-artifact@v4
       with:

@@ -6,8 +6,20 @@ on:
       - main  # default branch
 
 jobs:
+  decodermd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # If your repository depends on submodule, please see: https://github.com/actions/checkout
+          submodules: recursive
   trigger-pages-build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4  # 确保这一步在使用本地文件之前执行
+        with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        submodules: recursive
       - name: Trigger pages build
         uses: ./.github/workflows/pagesBuild.yml  # 引用工作流

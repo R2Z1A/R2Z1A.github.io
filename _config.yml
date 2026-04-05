@@ -99,11 +99,11 @@ ignore:
 theme: redefine
 
 # hexo-hide-posts 插件配置
-hexo-hide-posts:
+hide_posts:
   enable: true
   filter: hidden
   noindex: true
-  allowlist_generators: ['*']
+  allowlist_generators: []
   blocklist_generators: [index, tag, archive, feed, sitemap, category]
 
 # Deployment

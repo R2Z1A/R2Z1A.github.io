@@ -1,0 +1,21 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml
+
+your_personal_things
+
+# Encryption keys and sensitive files
+key_*.txt
+*.key
+.encrypted.key
+.claude
+CLAUDE.md
+
+# Local unencrypted posts (should only push encrypted versions)
+# source/_posts/*.md
+# !source/_posts/*.encrypted

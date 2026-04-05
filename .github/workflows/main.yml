@@ -1,0 +1,26 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main  # default branch
+
+jobs:
+  decodemd:
+    uses: ./.github/workflows/mdDecoder.yml
+    with:
+      input_path: './source/_posts'
+      ext: '.encrypted'
+      d: true
+    secrets:
+      KEY: ${{ secrets.KEY }}
+  recall_pageBuild:
+    needs: decodemd
+    uses: ./.github/workflows/pagesBuild.yml
+    permissions:
+      pages: write
+      id-token: write
+  deleteArti:
+    needs: [decodemd, recall_pageBuild]
+    if: always()  # 总是执行，无论前面的任务成功或失败
+    uses: ./.github/workflows/deleteArtifact.yml

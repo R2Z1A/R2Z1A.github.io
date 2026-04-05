@@ -1,0 +1,43 @@
+name: mdDecoder
+
+on:
+  workflow_call:
+    inputs:
+      input_path:
+        description: '输入文件或目录路径'
+        required: true
+        type: string
+      ext:
+        description: '加密文件扩展名'
+        required: false
+        default: '.encrypted'
+        type: string
+      d:
+        description: '是否处理整个目录'
+        required: false
+        default: false
+        type: boolean
+    secrets:
+      KEY:
+        required: true
+
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        submodules: recursive
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'  # 使用 LTS 版本
+    - name: Run decryption script
+      run: |
+        node .github/scripts/decrypt-workflow.js -i "${{ inputs.input_path }}" -k "${{ secrets.KEY }}" --ext "${{ inputs.ext }}" -d -r
+    - name: Save decrypted files as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: decrypted-files
+        path: ./

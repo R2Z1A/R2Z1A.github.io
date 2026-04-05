@@ -1,0 +1,27 @@
+name: deleteArtifact
+
+on:
+  workflow_call:
+
+jobs:
+  pushZero:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        submodules: recursive
+
+    - name: decrypted-files
+      uses: actions/upload-artifact@v4
+      with:
+        name: decrypted-files
+        path: ./README.md
+        overwrite: true
+
+    - name: github-pages
+      uses: actions/upload-artifact@v4
+      with:
+        name: github-pages
+        path: ./README.md
+        overwrite: true

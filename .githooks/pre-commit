@@ -1,0 +1,13 @@
+#!/bin/sh
+# Git pre-commit hook 检查明文 .md 文件
+
+echo "🔍 检查是否有明文 .md 文件..."
+
+# 使用 Node.js 脚本检查
+if command -v node >/dev/null 2>&1; then
+    node .githooks/pre-commit.js
+    exit $?
+else
+    echo "❌ 未找到 node 命令，请先安装 Node.js"
+    exit 1
+fi

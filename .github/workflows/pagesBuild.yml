@@ -12,12 +12,12 @@ jobs:
         with:
           name: decrypted-files
           path: ./
-      - name: Use Node.js v20
+      - name: Use Node.js v22
         uses: actions/setup-node@v4
         with:
           # Examples: 20, 18.19, >=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node
           # Ref: https://github.com/actions/setup-node#supported-version-syntax
-          node-version: '20'
+          node-version: '22'  # 使用 LTS 版本
       # - name: Cache NPM dependencies
       #   uses: actions/cache@v4
       #   with:

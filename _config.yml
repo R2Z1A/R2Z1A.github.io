@@ -103,8 +103,8 @@ hexo-hide-posts:
   enable: true
   filter: hidden
   noindex: true
-  allowlist_generators: [category]
-  blocklist_generators: [index, tag, archive, feed, sitemap]
+  allowlist_generators: []
+  blocklist_generators: [index, tag, archive, feed, sitemap, category]
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

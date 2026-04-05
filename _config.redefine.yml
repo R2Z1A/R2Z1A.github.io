@@ -120,10 +120,15 @@ home_banner:
   title: 遷移一区画
   # Home banner subtitle
   subtitle:
-    text: ['my body heat has risen once again',
-           'from searching for change in someting thats dead',
-           'i cant get rid of it even though i tried',
-           'so i make this soliloquy i pitifully write'] # subtitle text, array
+    text: ['让听得见炮声的人，呼唤炮火！',
+           '艰苦奋斗是我们的传家宝！',
+           '烧不死的鸟是凤凰！',
+           '没有伤痕累累，哪来皮糙肉厚，英雄自古多磨难。',
+           '力出一孔，利出一孔！',
+           '板凳要坐十年冷！',
+           '胜则举杯相庆，败则拼死相救！',
+           '凡事执行必有检查，凡事检查必有结果，凡事结果必有数据。'] # subtitle text, array
+
     hitokoto:  # 一言配置
       enable: false # Whether to enable hitokoto
       api: https://v1.hitokoto.cn # API URL, can add types, see https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
@@ -236,7 +241,7 @@ home:
     enable: true # Whether to enable sidebar
     position: left # Sidebar position. left, right
     first_item: menu # First item in sidebar. menu, info
-    announcement: '我学我学我学' # Announcement text
+    announcement: '苦行外包山...' # Announcement text
     show_on_mobile: true # Whether to show sidebar navigation on mobile sheet menu
     links:
       Archives: 
@@ -290,7 +295,7 @@ articles:
   author_label: 
     enable: true # Whether to enable
     auto: false # Whether to automatically add author label, e.g. Lv1, Lv2, Lv3...
-    list: ["8/20"]
+    list: ["7.15"]
   # Code block settings
   code_block:
     copy: true # Whether to enable code block copy button

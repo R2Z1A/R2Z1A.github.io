@@ -60,3 +60,11 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # Step 8: 覆盖 github-pages artifact，防止被下载
+      - name: Overwrite github-pages artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: ./README.md
+          overwrite: true

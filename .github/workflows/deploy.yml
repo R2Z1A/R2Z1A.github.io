@@ -1,0 +1,62 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # default branch
+
+# 全局权限设置
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # 单一 job：解密 → 构建 → 部署
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # Step 1: Checkout 代码（只执行一次）
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: recursive
+
+      # Step 2: 设置 Node.js（只执行一次）
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'  # 直接使用内置缓存
+
+      # Step 3: 解密（内存中操作，不上传 artifact）
+      - name: Decrypt posts
+        run: |
+          node .github/scripts/decrypt-workflow.js -i "./source/_posts" -k "${{ secrets.KEY }}" --ext ".encrypted" -d -r
+
+      # Step 4: 安装依赖
+      - name: Install dependencies
+        run: npm ci
+
+      # Step 5: 构建
+      - name: Build
+        run: npm run build
+
+      # Step 6: 上传 Pages artifact
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      # Step 7: 部署
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

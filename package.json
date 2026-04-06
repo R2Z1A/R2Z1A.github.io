@@ -14,7 +14,14 @@
     "decrypt": "node your_personal_things/decrypt-cli.js",
     "decrypt:file": "node your_personal_things/decrypt-cli.js -i",
     "decrypt:post": "node your_personal_things/decrypt-cli.js -i source/_posts/ -d -k your_personal_things/key_20250529_153436.txt -r",
-    "key:generate": "node your_personal_things/keygen.js"
+    "key:generate": "node your_personal_things/keygen.js",
+    "filter": "node your_personal_things/sensitive-word-filter.js",
+    "filter:replace": "node your_personal_things/sensitive-word-filter.js -m replace -i",
+    "filter:restore": "node your_personal_things/sensitive-word-filter.js -m restore -i",
+    "filter:replace:all": "node your_personal_things/sensitive-word-filter.js -i source/_posts/ -m replace -d",
+    "filter:restore:all": "node your_personal_things/sensitive-word-filter.js -i source/_posts/ -m restore -d",
+    "pre-post": "node your_personal_things/pre-post.js",
+    "post-pre": "node your_personal_things/post-pre.js"
   },
   "hexo": {
     "version": "8.1.1"

@@ -120,14 +120,7 @@ home_banner:
   title: 遷移一区画
   # Home banner subtitle
   subtitle:
-    text: ['让听得见炮声的人，呼唤炮火！',
-           '艰苦奋斗是我们的传家宝！',
-           '烧不死的鸟是凤凰！',
-           '没有伤痕累累，哪来皮糙肉厚，英雄自古多磨难。',
-           '力出一孔，利出一孔！',
-           '板凳要坐十年冷！',
-           '胜则举杯相庆，败则拼死相救！',
-           '凡事执行必有检查，凡事检查必有结果，凡事结果必有数据。'] # subtitle text, array
+    text: ['实际上这里本来有很多东西的，但是考虑到合规要求，他们都不见了。'] # subtitle text, array
 
     hitokoto:  # 一言配置
       enable: false # Whether to enable hitokoto
